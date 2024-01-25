@@ -35,3 +35,6 @@ class Event(models.Model):
     date = models.DateTimeField()
     invitees = models.ManyToManyField(User, related_name='invited_events')
     attendees = models.ManyToManyField(User, related_name='attended_events')
+    
+class DiscussionBoard(models.Model):
+    event = models.OneToOneField(Event, on_delete=models.CASCADE)
