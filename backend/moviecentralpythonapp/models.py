@@ -8,7 +8,7 @@ class Movie(models.Model):
     released = models.DateField()
     runtime = models.CharField(max_length=30)
     genre = models.CharField(max_length=100)
-    director
+    director = models.CharField(max_length=100)
     actors
     plot
     country
