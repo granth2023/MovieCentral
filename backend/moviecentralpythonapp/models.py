@@ -42,3 +42,4 @@ class DiscussionBoard(models.Model):
     moderators = models.ManyToManyField(User, related_name = 'moderated_boards')
     
 class Comment(models.Model):
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
