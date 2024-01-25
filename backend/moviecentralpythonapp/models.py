@@ -12,5 +12,5 @@ class Movie(models.Model):
     writers = models.TextField()
     actors = models.TextField()
     plot = models.TextField()
-    country
+    country = models.CharField(max_length=100)
     poster_url
