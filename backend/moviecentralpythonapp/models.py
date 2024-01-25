@@ -9,7 +9,7 @@ class Movie(models.Model):
     runtime = models.CharField(max_length=30)
     genre = models.CharField(max_length=100)
     director = models.CharField(max_length=100)
-    actors
+    actors = models.TextField()
     plot
     country
     poster_url
