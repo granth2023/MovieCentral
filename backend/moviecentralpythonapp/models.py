@@ -13,3 +13,4 @@ class Movie(models.Model):
     actors
     plot
     country
+    poster_url
