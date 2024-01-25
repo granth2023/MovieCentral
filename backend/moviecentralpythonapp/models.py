@@ -8,4 +8,4 @@ class Movie(models.Model):
     rated
     released
     runtime
-    
+    genre
