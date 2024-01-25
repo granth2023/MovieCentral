@@ -7,7 +7,7 @@ class Movie(models.Model):
     year = models.CharField(max_length=4)
     released = models.DateField()
     runtime = models.CharField(max_length=30)
-    genre
+    genre = models.CharField(max_length=100)
     director
     actors
     plot
