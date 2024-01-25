@@ -12,3 +12,4 @@ class Movie(models.Model):
     director
     actors
     plot
+    country
