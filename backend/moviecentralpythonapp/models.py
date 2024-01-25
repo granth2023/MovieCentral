@@ -25,3 +25,4 @@ class Review(models.Model):
     movie 
     user
     text
+    rating
