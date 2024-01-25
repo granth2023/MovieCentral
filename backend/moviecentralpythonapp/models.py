@@ -11,4 +11,4 @@ class Movie(models.Model):
     genre
     director
     actors
-    
+    plot
