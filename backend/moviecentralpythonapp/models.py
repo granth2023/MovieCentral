@@ -22,7 +22,7 @@ class User(models.Model):
     password = models.CharField(max_length=50)
     
 class Review(models.Model):
-    movie 
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user
     text
     rating
