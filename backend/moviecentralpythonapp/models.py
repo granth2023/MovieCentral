@@ -7,5 +7,5 @@ class Movie(models.Model):
     year
     rated
     released
-    
+    runtime
     
