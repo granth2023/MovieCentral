@@ -29,3 +29,4 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
 class Event(models.Model):
+    title = mdoels.CharField(max_length=200)
