@@ -5,8 +5,7 @@ from django.db import models
 class Movie(models.Model):
     title = models.CharField(max_length=200)
     year = models.CharField(max_length=4)
-    rated
-    released
+    released = models.DateField()
     runtime
     genre
     director
