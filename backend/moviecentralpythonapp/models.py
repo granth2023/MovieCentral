@@ -40,3 +40,5 @@ class DiscussionBoard(models.Model):
     event = models.OneToOneField(Event, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     moderators = models.ManyToManyField(User, related_name = 'moderated_boards')
+    
+class Comment(models.Model):
