@@ -33,3 +33,4 @@ class Event(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     host = models.ForeignKey(User, related_name='hosted_events', on_delete=models.CASCADE)
     date = models.DateTimeField()
+    invitees = models.ManyToManyField(User, realted_name='invited_events')
