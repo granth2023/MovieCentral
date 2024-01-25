@@ -9,3 +9,4 @@ class Movie(models.Model):
     released
     runtime
     genre
+    director
