@@ -23,3 +23,4 @@ class User(models.Model):
     
 class Review(models.Model):
     movie 
+    user
