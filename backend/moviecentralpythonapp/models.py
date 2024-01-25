@@ -32,3 +32,4 @@ class Event(models.Model):
     title = models.CharField(max_length=200)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     host = models.ForeignKey(User, related_name='hosted_events', on_delete=models.CASCADE)
+    date = models.DateTimeField()
