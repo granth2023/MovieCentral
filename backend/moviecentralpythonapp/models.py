@@ -6,4 +6,6 @@ class Movie(models.Model):
     title
     year
     rated
+    released
+    
     
