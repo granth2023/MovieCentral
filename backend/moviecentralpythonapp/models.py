@@ -26,3 +26,4 @@ class Review(models.Model):
     user
     text
     rating
+    created_at
