@@ -10,3 +10,5 @@ class Movie(models.Model):
     runtime
     genre
     director
+    actors
+    
