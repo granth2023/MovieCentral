@@ -47,3 +47,4 @@ class Comment(models.Model):
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE, realted_name='replies')
+    likes = models.ManyToManyField(User, related_name='liked_comments')
