@@ -61,7 +61,7 @@ class Comment(models.Model):
     
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, on_dleete=models.CASCADE)
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     
 class RSVP(models.Model):
