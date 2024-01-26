@@ -40,6 +40,7 @@ class Event(models.Model):
     date = models.DateTimeField()
     invitees = models.ManyToManyField(User, related_name='invited_events')
     attendees = models.ManyToManyField(User, related_name='attended_events')
+    location = models.CharField(max_length=200, null=True, blank=True)
     
 class DiscussionBoard(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
