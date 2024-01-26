@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.contenttypes.models import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import AbstractUser
 
 # ... your model definitions ...
 
@@ -22,7 +23,7 @@ class Movie(models.Model):
     poster_url = models.CharField(max_length=500, unique=True)
     
     
-class User(models.Model):
+class User(AbstractUser):
     username = models.CharField(max_length=100, unique=True)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=50)
@@ -31,7 +32,7 @@ class Review(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
-    rrating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     created_at = models.DateTimeField(auto_now_add=True)
     
 class Event(models.Model):
