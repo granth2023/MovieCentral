@@ -41,7 +41,7 @@ class Event(models.Model):
     invitees = models.ManyToManyField(User, related_name='invited_events')
     attendees = models.ManyToManyField(User, related_name='attended_events')
     location = models.CharField(max_length=200, null=True, blank=True)
-    
+    virtual_event_link=models.URLField(max_length=500, null=True, blank=True)
 class DiscussionBoard(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
