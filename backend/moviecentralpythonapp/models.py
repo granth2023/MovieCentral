@@ -24,9 +24,7 @@ class Movie(models.Model):
     
     
 class User(AbstractUser):
-    username = models.CharField(max_length=100, unique=True)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=50)
+    profile_picture = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
     
 class Review(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
