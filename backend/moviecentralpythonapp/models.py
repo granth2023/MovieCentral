@@ -52,6 +52,7 @@ class DiscussionBoard(models.Model):
     moderators = models.ManyToManyField(User, related_name = 'moderated_boards')
     
 class Comment(models.Model):
+    discussion_board = models.ForeignKey(DiscussionBoard, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
