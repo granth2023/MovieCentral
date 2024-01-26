@@ -56,4 +56,4 @@ class Comment(models.Model):
     
 class Like(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+    comment = models.ForeignKey(Comment, on_dleete=models.CASCADE)
