@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.contenttypes.models import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+# ... your model definitions ...
+
 
 # Create your models here.
 
@@ -27,7 +31,7 @@ class Review(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
-    rating = models.IntegerField(validators=[MinValueValidaator(0), MaxValidator(5)])
+    rrating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     created_at = models.DateTimeField(auto_now_add=True)
     
 class Event(models.Model):
