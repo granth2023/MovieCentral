@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.contenttypes.models import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 # Create your models here.
 
@@ -25,7 +27,7 @@ class Review(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
-    rating = models.IntegerField()
+    rating = models.IntegerField(validators=[MinValueValidaator(0), MaxValidator(5)])
     created_at = models.DateTimeField(auto_now_add=True)
     
 class Event(models.Model):
@@ -37,6 +39,9 @@ class Event(models.Model):
     attendees = models.ManyToManyField(User, related_name='attended_events')
     
 class DiscussionBoard(models.Model):
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
     event = models.OneToOneField(Event, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     moderators = models.ManyToManyField(User, related_name = 'moderated_boards')
