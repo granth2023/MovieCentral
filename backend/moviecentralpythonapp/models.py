@@ -43,3 +43,5 @@ class DiscussionBoard(models.Model):
     
 class Comment(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
